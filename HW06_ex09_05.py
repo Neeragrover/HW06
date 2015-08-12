@@ -16,11 +16,34 @@
 # Imports
 
 # Body
+def uses_all(word,string):
+	flag = True
+	for char in string:
+		if (word.find(char)== -1):
+			flag = False
+			break
+	return flag
 
+def uses_string(string):
+	cnt = 0
+	fin = open('words.txt','r')
+	for line in fin:
+		word = line.strip()
+		value = uses_all(word,string)
+		if value == True:
+			cnt += 1
+	fin.close()
+	return cnt
+	
 
 ##############################################################################
 def main():
-    pass  # Call your function(s) here.
+	print uses_all("neera",'neerag')
+	print uses_all("neera",'nwl')
+	print uses_string("aeiou")
+	print uses_string("aeioyu")
+	
+    
 
 if __name__ == '__main__':
     main()

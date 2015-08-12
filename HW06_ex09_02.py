@@ -13,11 +13,30 @@
 # Imports
 
 # Body
+def has_no_e(word):
+	if (word.find('e') == -1):
+		return True
 
 
 ##############################################################################
 def main():
-    pass  # Call your function(s) here.
+	total=0
+	n=0
+	percentage = 0
+	fin = open('words.txt','r')
+	for line in fin:
+		total=total+1
+		word = line.strip()
+		value = has_no_e(word)
+		if value:
+			n += 1
+			
+	print n
+	print total
+	total = total*1.00
+	percentage = (n/total)*100
+	print percentage
+			
 
 if __name__ == '__main__':
     main()
